@@ -5,7 +5,7 @@ import {BsFillSunFill} from "react-icons/Bs"
 import {WiHumidity} from "react-icons/wi"
 import styled from "styled-components"
 
-export default function GetWeather(){
+export default function GetWeather(props){
 
     const[locationData, setLocationData] = React.useState({})
     const[weatherData, setWeatherData] = React.useState({})
@@ -18,16 +18,19 @@ export default function GetWeather(){
         }
     };
     React.useEffect(() => {
-    fetch('https://weatherapi-com.p.rapidapi.com/current.json?q=London', options)
+    fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${props.city}`, options)
         .then(response => response.json())
         .then(response => {
             console.log(response)
+            try{
             const {country, localtime, name} = response.location
+            
         setLocationData({
             "country": country,
             "time": localtime,
             "name": name
         })
+
             const {feelslike_c, humidity, last_updated, temp_c, uv, wind_kph} = response.current
         setWeatherData({
             "feelslike_c" : feelslike_c,
@@ -37,10 +40,15 @@ export default function GetWeather(){
             "uv" : uv,
             "wind_kph" : wind_kph
         })
+    }
+    catch{
+        alert("Error not found!")
+    }
         })
-        .catch(err => console.error(err));
-        console.log(locationData, weatherData)
-    }, [])
+        .catch((err) => {
+            console.error(err)});
+        
+    }, [props.update])
 
 return (
     <Wrapper> 

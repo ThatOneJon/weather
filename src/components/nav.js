@@ -3,7 +3,17 @@ import styled from "styled-components"
 import {Link} from "gatsby"
 
 
-export default function Nav(){
+export default function Nav(props){
+    function handleChange(e){
+        console.log(e.target.value)
+        props.changeCity(e.target.value)
+    }
+
+    function handleClick(e){
+        e.preventDefault()
+        props.setUpdate(prev => !prev)
+    }
+
     return(
     <Wrapper>
         <ul>
@@ -11,9 +21,9 @@ export default function Nav(){
             <li><Link to = "/">Test</Link></li>
             <li>
                 <form>
-                    <label for ="search">Go to: </label>
-                    <input type ="text" name="search" placeholder="Name a city ... "/>
-                    <button>Go!</button>
+                    <label>Go to: </label>
+                    <input style = {{color:"black"}} type ="text" name="search" placeholder="Name a city ... " onChange={(e) => handleChange(e)} value={props.city} />
+                    <button onClick = {(e) => handleClick(e)}>Go!</button>
                 </form>
             </li>
         </ul>
