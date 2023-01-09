@@ -1,7 +1,7 @@
 import * as React from "react"
 import Layout from "../components/layout";
 import GetWeather from "../components/getWeather";
-
+import MoreInfos from "../components/moreInfos";
 
 export default function Home() {
   const[cityEntry, setCityEntry] = React.useState("london")
@@ -13,6 +13,7 @@ export default function Home() {
       <Layout city = {cityEntry} changeCity = {(x) => setCityEntry(x)} setUpdate={(y) => setUpdate(y)}>
         <img src="https://picsum.photos/2500/300" style={{width:"100%", maxHeight:"500px", overflow:"hidden"}}/>
         <GetWeather city={cityEntry} changedCity={() => setCityEntry()} update= {update}/>
+        <MoreInfos city={cityEntry} />
       </Layout>
     </>
   )}

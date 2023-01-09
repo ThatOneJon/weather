@@ -52,14 +52,14 @@ export default function GetWeather(props){
 
 return (
     <Wrapper> 
-        <div  style={{display: "flex", width: "100%", margin:"0px", justifyContent:"space-evenly", backgroundColor:"#2B32AC", color:"white", padding:"20px", fontWeight:"bold", fontSize:"1.3em"}}>
+        <div className="back" style={{display: "flex", width: "100%", margin:"0px", justifyContent:"space-evenly", backgroundColor:"#2B32AC", color:"white", padding:"20px", fontWeight:"bold", fontSize:"1.3em"}}>
             <h2>City: {locationData.name}</h2>
             <h2>Country: {locationData.country}</h2>
             <h2>Time: {locationData.time}</h2>
             <h2>Last updated: {weatherData.last_updated} </h2>
         </div>
-        <div className =" flex justify-center w-full mt-10">
-            <div className ="flex-col w-1/5 bg-orange-300 font-mono text-3xl font-bold p-8 min-w-min rounded-lg">
+        <div className =" flex justify-center w-full mt-1  bg-sky-500 p-5">
+            <div className ="flex-col w-1/5 bg-orange-300 font-mono text-3xl font-bold p-8 min-w-min rounded-lg shadow-2xl">
                 <h1 className="text-center text-5xl">Current conditions</h1>
                 <h1><FaTemperatureLow className="text-4xl" /> {weatherData.temp}°C feels like {weatherData.feelslike_c}</h1>
                 <h1><BsWind  className="text-4xl"/> {weatherData.wind_kph} km/h </h1>
