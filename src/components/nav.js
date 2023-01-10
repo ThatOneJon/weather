@@ -16,27 +16,30 @@ export default function Nav(props){
 
     return(
     <Wrapper>
-        <ul>
-            <li><Link to = "/">Home</Link></li>
-            <li><Link to = "/about">About</Link></li>
-            <li>
-                <form>
-                    <label>Go to: </label>
-                    <input style = {{color:"black"}} type ="text" name="search" placeholder="Name a city ... " onChange={(e) => handleChange(e)} value={props.city} />
-                    <button onClick = {(e) => handleClick(e)}>Go!</button>
-                </form>
-            </li>
-        </ul>
+        <div>
+            <ul className="mt-0">
+                <li><Link to = "/">Home</Link></li>
+                <li><Link to = "/about">About</Link></li>
+                <li>
+                    <form>
+                        <label>Go to: </label>
+                        <input style = {{color:"black"}} type ="text" name="search" placeholder="Name a city ... " onChange={(e) => handleChange(e)} value={props.city} />
+                        <button onClick = {(e) => handleClick(e)}>Go!</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
     </Wrapper>
     )
 }
 const Wrapper =  styled.section`
     background-color: #5A5997;
-    margin-bottom: 5px;
     padding: 4px;
     font-size: 25px;
     color: white;
     font-weight: bold;
+    position: fixed;
+    width: 100%;
 
     ul{
         list-style-type: none;
