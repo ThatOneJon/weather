@@ -11,7 +11,6 @@ export default function Home() {
   return( 
     <>
       <Layout city = {cityEntry} changeCity = {(x) => setCityEntry(x)} setUpdate={(y) => setUpdate(y)}>
-        <img src="https://picsum.photos/2500/300" style={{width:"100%", maxHeight:"500px", overflow:"hidden"}}/>
         <GetWeather city={cityEntry} changedCity={() => setCityEntry()} update= {update}/>
         <MoreInfos city={cityEntry} />
       </Layout>

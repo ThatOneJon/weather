@@ -1,0 +1,19 @@
+import React from "react"
+import Layout from "../components/layout"
+
+export default function About(){
+    return (
+        <Layout>
+            <div className=" flex justify-center align-middle w-full font-mono">
+                <div className="w-2/5 mt-20">
+                <h1 className="text-2xl text-center mb-10 font-bold">This is an example text, it could contain infos about the site!</h1>
+                <p className="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pretium, leo id molestie malesuada, neque justo sollicitudin quam, at blandit ex sapien at tortor. Praesent faucibus cursus luctus. Nulla at luctus arcu. In hac habitasse platea dictumst. Morbi cursus dui turpis, sit amet sollicitudin dolor luctus nec. Morbi quis nisl tincidunt, mollis odio quis, porttitor lorem. Nullam congue condimentum arcu sed sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras ut sagittis velit, eget volutpat mauris. Aenean in laoreet nisi. Donec at turpis ac enim tincidunt cursus ac eu dui. Phasellus aliquam diam vel tortor scelerisque, sit amet ultricies nunc elementum. Quisque non quam vel diam imperdiet semper eget non dui. Praesent pulvinar leo at mauris interdum, auctor fermentum quam tristique. Nunc nec lobortis diam. Curabitur faucibus nibh nisl, quis vulputate velit fermentum scelerisque.Mauris tempor lorem eget placerat fermentum. Proin vel tristique ante. Morbi nec imperdiet arcu. Maecenas a luctus eros. Donec sodales ligula eu sollicitudin mattis. Sed molestie vitae ligula in tempus. Etiam auctor dignissim accumsan. In cursus tellus sed risus aliquet sodales. Maecenas nisi enim, sodales nec mollis ac, egestas maximus orci. Aliquam nisl massa, imperdiet sed auctor non, rutrum eu purus. Curabitur at imperdiet lorem, eget pharetra risus. Donec vestibulum est eu ex aliquet sollicitudin.
+                Integer id luctus arcu. Nulla facilisi. Aliquam erat volutpat. Proin imperdiet quis arcu quis consectetur. Nulla facilisi. Quisque cursus metus id neque elementum porttitor. Duis accumsan mi dictum, gravida felis sit amet, ornare tellus. Vestibulum vehicula dui ac fermentum bibendum. Aliquam erat volutpat. Fusce cursus quam vitae magna hendrerit rutrum. Nulla laoreet dapibus risus in euismod. Donec efficitur, ipsum sit amet aliquam bibendum, purus arcu vestibulum nulla, at venenatis tellus leo vel urna.
+                Quisque porttitor faucibus purus quis convallis. Suspendisse potenti. Nunc dapibus lectus at lacus mattis, sed pellentesque libero pretium. Aliquam faucibus tempus hendrerit. Cras posuere pellentesque pharetra. Sed risus lectus, efficitur quis est id, varius condimentum metus. Morbi tincidunt mattis maximus. Nulla facilisi. Nam ornare fringilla dolor eget sollicitudin. Nunc suscipit, purus in hendrerit egestas, velit justo tempor ex, ut viverra nunc purus in orci. Curabitur dictum in nisl non venenatis. Nunc volutpat lacus non porta vestibulum.
+                Nullam molestie, neque dictum porttitor tempor, felis nunc eleifend leo, malesuada imperdiet tortor quam vel dolor. Donec in mauris leo. Aenean mattis non lectus vel viverra. Aenean gravida vehicula mauris, et pretium elit posuere ac. Morbi tincidunt efficitur metus, a tincidunt felis pharetra eget. Vestibulum tempus, odio id iaculis fermentum, urna libero tincidunt urna, nec eleifend urna diam eu elit. Donec luctus tortor sit amet orci cursus maximus. Integer est nisi, bibendum vitae mollis eget, dictum sit amet arcu. Proin convallis venenatis varius. Pellentesque bibendum dolor in mauris fermentum tristique.
+                </p>
+                </div>
+            </div>
+        </Layout>
+    )
+}

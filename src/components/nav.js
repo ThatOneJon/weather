@@ -18,7 +18,7 @@ export default function Nav(props){
     <Wrapper>
         <ul>
             <li><Link to = "/">Home</Link></li>
-            <li><Link to = "/About">About</Link></li>
+            <li><Link to = "/about">About</Link></li>
             <li>
                 <form>
                     <label>Go to: </label>
