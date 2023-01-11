@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import {Link} from "gatsby"
-
+import{BiDownArrow} from "react-icons/Bi"
 
 export default function Nav(props){
     function handleChange(e){
@@ -14,17 +14,30 @@ export default function Nav(props){
         props.setUpdate(prev => !prev)
     }
 
+    const[menu, setMenu] = React.useState(false)
+
+    function handleDropdown(){
+        setMenu(prev => !prev)
+        console.log(menu)
+    }
+
     return(
     <Wrapper>
         <div>
             <ul className="mt-0">
                 <li><Link to = "/">Home</Link></li>
                 <li><Link to = "/about">About</Link></li>
+                <li><button onClick={handleDropdown} className="flex"><p className={`mr-2 ${menu ? "underline" : null}`}>Games</p> <BiDownArrow className="mt-2" /></button>
+                    { menu && <ul className="flex flex-col text-center">
+                        <li><Link to = "/quiz">Quiz</Link></li>
+                        <li>lol</li>
+                        </ul> }
+                </li>
                 <li>
                     <form>
-                        <label>Go to: </label>
-                        <input style = {{color:"black"}} type ="text" name="search" placeholder="Name a city ... " onChange={(e) => handleChange(e)} value={props.city} />
-                        <button onClick = {(e) => handleClick(e)}>Go!</button>
+                        <label htmlFor ="search">Go to: </label>
+                        <input  style = {{color:"black"}} type ="text" name="search" placeholder="Name a city ... " onChange={(e) => handleChange(e)} value={props.city} />
+                        <button className="bg-blue-600 rounded ml-1" onClick = {(e) => handleClick(e)}>Go!</button>
                     </form>
                 </li>
             </ul>
