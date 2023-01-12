@@ -87,7 +87,7 @@ export default function Questions(props){
         setGameOver(false)
         setStartGame(prev => !prev)
     }
-
+ 
     return(
         <div className="flex  justify-center text-center">
             <div className ="w-2/5 mt-10 ">
