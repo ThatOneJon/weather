@@ -72,7 +72,7 @@ export default function Questions(props){
     }, [])
 
     React.useEffect(() => {
-        fetch("https://the-trivia-api.com/api/questions", {
+        fetch("https://the-trivia-api.com/api/questions/", {
             "Content-Type":"application/json"
         })
         .then((result) => result = result.json())
