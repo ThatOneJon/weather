@@ -30,7 +30,6 @@ export default function Nav(props){
                 <li><button onClick={handleDropdown} className="flex"><p className={`mr-2 ${menu ? "underline" : null}`}>Games</p> <BiDownArrow className="mt-2" /></button>
                     { menu && <ul className="flex flex-col text-center">
                         <li><Link to = "/quiz">Quiz</Link></li>
-                        <li>lol</li>
                         </ul> }
                 </li>
                 <li>

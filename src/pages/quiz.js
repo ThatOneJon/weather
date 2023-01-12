@@ -10,6 +10,7 @@ export default function Quiz(){
         <Layout>
             <div className="w-full font-mono mt-10">
                 <h1 className="text-center text-5xl font-bold">TRIVIA QUIZZ GAME!</h1>
+                <h2 className="text-center text-3xl font-bold my-10">Your Score: {score} </h2>
                 <Questions setScore = {(a) => setScore(a) }/>
             </div>
         </Layout>
