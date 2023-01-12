@@ -9,6 +9,7 @@ export default function Questions(props){
     const[chooseCategory, setChooseCategory] = React.useState("")
     const[chooseAnswer, setChooseAnswer] = React.useState({})
     const[gameOver, setGameOver] = React.useState(false)
+    const[startGame, setStartGame] = React.useState(false)
 
     function commitAnswers(){
         let correctAnswers= []
@@ -25,7 +26,7 @@ export default function Questions(props){
         setGameOver(true)
         props.setScore(prev => prev + correctAnswers.length)
     }
-    console.log(chooseAnswer)
+    console.log(chooseCategory)
 
     function choosingAnsw(event){
         const value = event.target.value
@@ -57,6 +58,7 @@ export default function Questions(props){
 
     function handleClick(){
         console.log("GO")
+        setStartGame(prev => !prev)
     }
 
     React.useEffect(() =>{
@@ -72,14 +74,19 @@ export default function Questions(props){
     }, [])
 
     React.useEffect(() => {
-        fetch("https://the-trivia-api.com/api/questions/", {
+        fetch(`https://the-trivia-api.com/api/questions${"?categories="+ chooseCategory}`, {
             "Content-Type":"application/json"
         })
         .then((result) => result = result.json())
         .then((questions) =>setQuestions(questions))
         .then(() => setQuestions((questions) => questions.map(q => ({"choosen":"",...q, "allQ" : q.incorrectAnswers.splice(Math.floor(Math.random() * (q.incorrectAnswers.length + 1)), 0, q.correctAnswer)}))))
 
-    },[])
+    },[startGame])
+
+    function handleNext(){
+        setGameOver(false)
+        setStartGame(prev => !prev)
+    }
 
     return(
         <div className="flex  justify-center text-center">
@@ -103,7 +110,7 @@ export default function Questions(props){
                 </div>
                 <div className="text-center flex justify-center">
                     <button onClick ={commitAnswers} className="hover:shadow-xl shadow-black bg-sky-500 hover:bg-sky-400 py-4 px-9 rounded text-center mb-20 text-white font-bold mt-10">Submit!</button>
-                    <button onClick={setGameOver(false)} className="hover:bg-sky-400 hover:shadow-xl shadow-black text-4xl bg-sky-500 ml-5 text-white rounded py-4 px-3  mb-20 mt-10"> <BiRightArrow className="text-4xl"/></button>
+                    <button onClick={handleNext} className="hover:bg-sky-400 hover:shadow-xl shadow-black text-4xl bg-sky-500 ml-5 text-white rounded py-4 px-3  mb-20 mt-10"> <BiRightArrow className="text-4xl"/></button>
                 </div>
             </div>
         </div>
