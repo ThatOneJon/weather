@@ -60,7 +60,7 @@ return (
             <h2>Last updated: {weatherData.last_updated} </h2>
         </div>
         <div className =" flex justify-center w-full mt-1  bg-sky-500 p-5">
-            <div className ="flex-col w-2/6 bg-orange-300 font-mono text-3xl font-bold p-8 min-w-1/5 rounded-lg shadow-2xl mt-10">
+            <div className ="flex-col w-2/6 bg-orange-300 font-mono text-3xl font-bold p-8 min-w-1/5 rounded-lg shadow-2xl mt-10 min-w-min">
                 <h1 className="text-center text-5xl">Current conditions</h1>
                 <h1><FaTemperatureLow className="text-4xl" /> {weatherData.temp}°C feels like {weatherData.feelslike_c}</h1>
                 <h1><BsWind  className="text-4xl"/> {weatherData.wind_kph} km/h </h1>

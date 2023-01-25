@@ -31,7 +31,7 @@ export default function Quote(){
     }, [])
 
     return(
-        <motion.div  animate={{rotateY: rotation, position: "flex"}} transition={{duration:1.4}} className="p-8 bg-orange-300 rounded-lg  shadow-2xl" style={{height:"100%", width:"100%"}}>
+        <motion.div  animate={{rotateY: rotation, position: "flex"}} transition={{duration:1.4}} className="min-w-min p-8 bg-orange-300 rounded-lg  shadow-2xl" style={{height:"100%", width:"100%"}}>
             <div  style={{textAlign:"center",color:"black"}} className="mt-12  p-5">
             <h4 className="text-4xl underline mt-5">Have a random quote!</h4>
             <h5 className="text-4xl mb-10 mt-16">{changeQuote && changeQuote.text}</h5>
