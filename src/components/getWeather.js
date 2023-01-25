@@ -4,6 +4,7 @@ import {BsWind} from "react-icons/Bs"
 import {BsFillSunFill} from "react-icons/Bs"
 import {WiHumidity} from "react-icons/wi"
 import styled from "styled-components"
+import Quote from "./Quote"
 
 export default function GetWeather(props){
 
@@ -65,6 +66,9 @@ return (
                 <h1><BsWind  className="text-4xl"/> {weatherData.wind_kph} km/h </h1>
                 <h1><BsFillSunFill  className="text-4xl"/> {weatherData.uv} UV index </h1>
                 <h1><WiHumidity  className="text-4xl"/> {weatherData.humidity} humidity </h1>
+            </div>
+            <div className ="flex-col w-1/5 bg-orange-300 font-mono text-3xl font-bold p-8 min-w-min rounded-lg shadow-2xl mt-10 ml-5">
+                <Quote />
             </div>
         </div>
     </Wrapper>
