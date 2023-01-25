@@ -50,7 +50,7 @@ const Wrapper =  styled.section`
     font-size: 25px;
     color: white;
     font-weight: bold;
-    position: fixed;
+    top:0;
     width: 100%;
 
     ul{
